@@ -20,6 +20,7 @@ class UsersController < ApplicationController
       email: params[:email],
       image_name: "default_user.jpg",
       password: params[:password]
+      
       )
     if @user.save
       session[:user_id] = @user.id
@@ -68,7 +69,7 @@ class UsersController < ApplicationController
       @password = params[:password]
       render("users/login_form")
     end
-  end
+  end 
   
   def logout
     session[:user_id] = nil
